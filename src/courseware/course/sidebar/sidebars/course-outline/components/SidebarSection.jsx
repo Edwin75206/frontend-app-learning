@@ -22,7 +22,7 @@ const SidebarSection = ({ intl, section, handleSelectSection }) => {
 
   const sectionTitle = (
     <>
-      <div className="col-auto p-0">
+      <div className="col-auto p-0" >
         <CompletionIcon completionStat={completionStat} />
       </div>
       <div className="col-10 ml-3 p-0 flex-grow-1 text-dark-500 text-left text-break">
@@ -37,7 +37,7 @@ const SidebarSection = ({ intl, section, handleSelectSection }) => {
   );
 
   return (
-    <li className="mb-2 course-sidebar-section">
+    <li className="mb-2 course-sidebar-section" >
       <Button
         variant="tertiary"
         className={classNames(

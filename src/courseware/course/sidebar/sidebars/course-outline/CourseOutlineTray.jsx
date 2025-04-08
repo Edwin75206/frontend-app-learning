@@ -55,14 +55,17 @@ const CourseOutlineTray = ({ intl }) => {
   const sidebarHeading = (
     <div className="outline-sidebar-heading-wrapper sticky d-flex justify-content-between align-self-start align-items-center bg-light-200 p-2.5 pl-4">
       {isDisplaySequenceLevel && backButtonTitle ? (
-        <Button
-          variant="link"
-          iconBefore={ChevronLeftIcon}
-          className="outline-sidebar-heading p-0 mb-0 text-left text-dark-500"
-          onClick={handleBackToSectionLevel}
-        >
-          {backButtonTitle}
-        </Button>
+       //MODIFICACION COLOR DEL BOTON
+       <Button
+        variant="link"
+        iconBefore={ChevronLeftIcon}
+        className="outline-sidebar-heading p-0 mb-0 text-left custom-back-button"
+        onClick={handleBackToSectionLevel}
+      >
+        {backButtonTitle}
+      </Button>
+      
+      
       ) : (
         <span className="outline-sidebar-heading mb-0 h4 text-dark-500">
           {intl.formatMessage(messages.courseOutlineTitle)}

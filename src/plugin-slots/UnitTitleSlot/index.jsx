@@ -4,6 +4,8 @@ import { useIntl } from '@edx/frontend-platform/i18n';
 
 import { BookmarkButton } from '@src/courseware/course/bookmark';
 import messages from '@src/courseware/course/sequence/messages';
+import './indexestilo.scss';
+
 
 const UnitTitleSlot = ({
   unitId,

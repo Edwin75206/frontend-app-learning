@@ -24,6 +24,8 @@ import { SequenceNavigation, UnitNavigation } from './sequence-navigation';
 import SequenceContent from './SequenceContent';
 import { CourseOutlineSidebarSlot } from '../../../plugin-slots/CourseOutlineSidebarSlot';
 import { CourseOutlineSidebarTriggerSlot } from '../../../plugin-slots/CourseOutlineSidebarTriggerSlot';
+import studioLogo from './studio-logo.png';
+
 
 const Sequence = ({
   unitId,
@@ -169,7 +171,7 @@ const Sequence = ({
           unitId={unitId}
         />
         <CourseOutlineSidebarSlot />
-        <div className="sequence w-100">
+        <div style={{ backgroundColor: '#f5f5f5', padding: '20px' }} className="sequence w-100">
           {!isEnabledOutlineSidebar && (
             <div className="sequence-navigation-container">
               <SequenceNavigation
@@ -207,7 +209,20 @@ const Sequence = ({
               renderUnitNavigation={renderUnitNavigation}
             />
             {unitHasLoaded && renderUnitNavigation(false)}
+            
           </div>
+          <div style={{ textAlign: 'center' }}>
+  <img
+    src={studioLogo}
+    alt="Studio Logo"
+    style={{
+      width: '200px',
+      height: 'auto',
+      marginBottom: '10px',
+    }}
+  />
+</div>
+
         </div>
         <NotificationsDiscussionsSidebarSlot courseId={courseId} />
       </div>

@@ -49,7 +49,7 @@ const SequenceContent = ({
   const unit = useModel('units', unitId);
   if (!unitId || !unit) {
     return (
-      <div>
+      <div >
         {intl.formatMessage(messages.noContent)}
       </div>
     );

@@ -378,7 +378,7 @@ describe('Course', () => {
     waitFor(() => expect(chat).toBeInTheDocument());
   });
 
-  it('does not display chat when screen is too narrow (mobile)', async () => {
+  it('does not display chat when screen is too narrow (mobile)' , async () => {
     global.innerWidth = breakpoints.extraSmall.minWidth;
     const courseMetadata = Factory.build('courseMetadata', {
       learning_assistant_enabled: true,

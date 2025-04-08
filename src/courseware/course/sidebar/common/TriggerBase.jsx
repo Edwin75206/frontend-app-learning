@@ -12,6 +12,7 @@ const SidebarTriggerBase = ({
     type="button"
     onClick={onClick}
     aria-label={ariaLabel}
+    
   >
     <div className="icon-container d-flex position-relative align-items-center">
       {children}

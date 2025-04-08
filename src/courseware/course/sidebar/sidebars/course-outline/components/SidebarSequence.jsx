@@ -33,11 +33,12 @@ const SidebarSequence = ({
 
   const sectionTitle = (
     <>
-      <div className="col-auto p-0" style={{ fontSize: '1.1rem' }}>
+      <div className="col-auto p-0" style={{ fontSize: '1.1rem' }} >
         <CompletionIcon completionStat={completionStat} />
       </div>
       <div className="col-9 d-flex flex-column flex-grow-1 ml-3 mr-auto p-0 text-left">
-        <span className="align-middle text-dark-500">{title}</span>
+       {/* AQUI SE MODIFICA DONDE DICE UNIDAD 1 */}
+        <span className="align-middle text-dark-500"  >{title}</span>
         {specialExamInfo && <span className="align-middle small text-muted">{specialExamInfo}</span>}
         <span className="sr-only">
           , {intl.formatMessage(complete
@@ -57,7 +58,7 @@ const SidebarSequence = ({
         open={open}
         onToggle={() => setOpen(!open)}
       >
-        <ol className="list-unstyled">
+        <ol className="list-unstyled" >
           {unitIds.map((unitId, index) => (
             <SidebarUnit
               key={unitId}

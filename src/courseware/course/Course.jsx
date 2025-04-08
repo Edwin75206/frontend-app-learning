@@ -83,7 +83,7 @@ const Course = ({
       <Helmet>
         <title>{`${pageTitleBreadCrumbs.join(' | ')} | ${getConfig().SITE_NAME}`}</title>
       </Helmet>
-      <div className="position-relative d-flex align-items-xl-center mb-4 mt-1 flex-column flex-xl-row">
+      <div className="position-relative d-flex align-items-xl-center mb-4 mt-1 flex-column flex-xl-row" >
         {navigationDisabled || (
         <>
           <CourseBreadcrumbsSlot
@@ -107,13 +107,13 @@ const Course = ({
             />
           </>
         )}
-        <div className="w-100 d-flex align-items-center">
+        <div className="w-100 d-flex align-items-center"  >
           <CourseOutlineMobileSidebarTriggerSlot />
           <NotificationsDiscussionsSidebarTriggerSlot courseId={courseId} />
         </div>
       </div>
 
-      <AlertList topic="sequence" />
+      <AlertList topic="sequence"  />
       <Sequence
         unitId={unitId}
         sequenceId={sequenceId}

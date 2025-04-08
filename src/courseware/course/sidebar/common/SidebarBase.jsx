@@ -67,7 +67,7 @@ const SidebarBase = ({
             {shouldDisplayFullScreen
               ? null
               : (
-                <div className="d-inline-flex mr-2 ml-auto">
+                <div className="d-inline-flex mr-2 ml-auto" >
                   <IconButton
                     src={Close}
                     size="sm"

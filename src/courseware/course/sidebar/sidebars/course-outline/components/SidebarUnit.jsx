@@ -26,7 +26,7 @@ const SidebarUnit = ({
   const iconType = isLocked ? UNIT_ICON_TYPES.lock : icon;
 
   return (
-    <li className={classNames({ 'bg-info-100': isActive, 'border-top border-light': !isFirst })}>
+    <li className={classNames({ 'bg-info-100': isActive, 'border-top border-light': !isFirst })} >
       <UnitLinkWrapper
         {...{
           sequenceId,
@@ -35,7 +35,7 @@ const SidebarUnit = ({
           courseId,
         }}
       >
-        <div className="col-auto p-0">
+        <div className="col-auto p-0" >
           <UnitIcon type={iconType} isCompleted={complete} />
         </div>
         <div className="col-10 p-0 ml-3 text-break">

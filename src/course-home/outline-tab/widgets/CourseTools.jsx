@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-
+import myFavicon from './favicon.png';
 import { sendTrackingLogEvent } from '@edx/frontend-platform/analytics';
 import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 import { injectIntl, intlShape } from '@edx/frontend-platform/i18n';
@@ -13,15 +13,13 @@ import { faNewspaper } from '@fortawesome/free-regular-svg-icons';
 import messages from '../messages';
 import { useModel } from '../../../generic/model-store';
 import LaunchCourseHomeTourButton from '../../../product-tours/newUserCourseHomeTour/LaunchCourseHomeTourButton';
+import './estilosTools.scss';
 
 const CourseTools = ({ intl }) => {
-  const {
-    courseId,
-  } = useSelector(state => state.courseHome);
+  const { courseId } = useSelector(state => state.courseHome);
+  // Obtenemos la organización a la que pertenece el curso
   const { org } = useModel('courseHomeMeta', courseId);
-  const {
-    courseTools,
-  } = useModel('outline', courseId);
+  const { courseTools } = useModel('outline', courseId);
 
   if (courseTools.length === 0) {
     return null;
@@ -36,7 +34,7 @@ const CourseTools = ({ intl }) => {
     const { administrator } = getAuthenticatedUser();
     sendTrackingLogEvent('edx.course.tool.accessed', {
       ...eventProperties,
-      course_id: courseId, // should only be courserun_key, but left as-is for historical reasons
+      course_id: courseId, // se mantiene courseId por motivos históricos
       is_staff: administrator,
       tool_name: analyticsId,
     });
@@ -61,22 +59,20 @@ const CourseTools = ({ intl }) => {
     }
   };
 
+  // Asigna la clase dinámica según la organización
+  const titleClass =
+    org === 'Preescolar'
+      ? 'my-h4-preescolar'
+      : org === 'Primaria'
+      ? 'my-h4-primaria'
+      : 'my-h4';
+
   return (
     <section className="mb-4">
-      <h2 className="h4">{intl.formatMessage(messages.tools)}</h2>
-      <ul className="list-unstyled">
-        {courseTools.map((courseTool) => (
-          <li key={courseTool.analyticsId} className="small">
-            <a href={courseTool.url} onClick={() => logClick(courseTool.analyticsId)}>
-              <FontAwesomeIcon icon={renderIcon(courseTool.analyticsId)} className="mr-2" fixedWidth />
-              {courseTool.title}
-            </a>
-          </li>
-        ))}
-        <li className="small" id="courseHome-launchTourLink">
-          <LaunchCourseHomeTourButton />
-        </li>
-      </ul>
+      <h2 className={titleClass}>
+        {intl.formatMessage(messages.tools)}
+      </h2>
+      <img src={myFavicon} alt="Descripción de la imagen" width="400" />
     </section>
   );
 };
