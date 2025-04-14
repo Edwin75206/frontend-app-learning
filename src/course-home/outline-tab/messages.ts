@@ -171,7 +171,7 @@ const messages = defineMessages({
   },
   tools: {
     id: 'learning.outline.tools',
-    defaultMessage: 'Herramientas',
+    defaultMessage: 'Recursos',
     description: 'Headline for the (course tools) section in course outline. course tool might include links to course bookmarks, financial assistance...etc',
   },
   upgradeButton: {

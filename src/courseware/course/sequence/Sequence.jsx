@@ -26,8 +26,9 @@ import { CourseOutlineSidebarSlot } from '../../../plugin-slots/CourseOutlineSid
 import { CourseOutlineSidebarTriggerSlot } from '../../../plugin-slots/CourseOutlineSidebarTriggerSlot';
 
 // **IMPORTS DE TUS IMÁGENES**
-import studioLogo from './studio-logo.png';
-import logoUnimec from './logo-unimec.png';
+import logoUnimec from '../../../imagenes/logo-unimec.png';
+import studioLogo from '../../../imagenes/studio-logo.png';
+
 
 const Sequence = ({
   unitId,
@@ -66,12 +67,12 @@ const Sequence = ({
   // Obtenemos la organización
   const { org } = useModel('courseHomeMeta', courseId);
   // Seleccionamos la imagen según la org
-  let selectedLogo;
-  if (org === 'Unimec') {
-    selectedLogo = logoUnimec;
-  } else if (org === 'Preescolar') {
-    selectedLogo = studioLogo;
-  } 
+    // Verificamos si es una organización relacionada con Unimec
+  const isUnimecRelated = ['Unimec', 'Primaria', 'Secundaria'].includes(org);
+
+  // Seleccionamos la imagen según la org
+  const selectedLogo = isUnimecRelated ? logoUnimec : studioLogo;
+  
   const handlePrevious = () => {
     const previousIndex = sequence.unitIds.indexOf(unitId) - 1;
     const newUnitId = sequence.unitIds[previousIndex];
@@ -226,16 +227,15 @@ const Sequence = ({
           {/* Aquí usamos la imagen elegida: */}
           <div style={{ textAlign: 'center' }}>
           <img
-              src={selectedLogo}
-              alt={`Logo Org ${org || ''}`}
-              style={{
-                width: org === 'Unimec' ? '500px' : '200px',
-                height: 'auto',
-                marginBottom: '10px',
-              }}
-            />
+            src={selectedLogo}
+            alt={`Logo Org ${org || ''}`}
+            style={{
+              width: isUnimecRelated ? '500px' : '200px',
+              height: 'auto',
+              marginBottom: '10px',
+            }}
+          />
           </div>
-
         </div>
         <NotificationsDiscussionsSidebarSlot courseId={courseId} />
       </div>

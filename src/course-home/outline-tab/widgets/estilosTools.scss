@@ -3,10 +3,10 @@
 .my-h4 {
     font-size: 1.75rem;
     font-weight: 600;
-    color: #333; /* color por defecto */
+    color: #b700ff; /* color por defecto */
   }
   
-  .my-h4-preescolar {
+  .my-h4-unimec {
     font-size: 1.75rem;
     font-weight: 600;
     color: #f00; /* estilo específico para Preescolar */
@@ -16,5 +16,13 @@
     font-size: 1.75rem;
     font-weight: 600;
     color: #00f; /* estilo específico para Primaria */
+  }
+  .library-reminder {
+    background-color: #f0f8ff;
+    border-left: 4px solid #40E0D0;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 6px;
+    font-family: 'Roboto', sans-serif;
   }
   

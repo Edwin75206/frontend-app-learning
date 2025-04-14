@@ -61,20 +61,29 @@ const CourseTools = ({ intl }) => {
 
   // Asigna la clase dinámica según la organización
   const titleClass =
-    org === 'Preescolar'
-      ? 'my-h4-preescolar'
+    org === 'Unimec'
+      ? 'my-h4-unimec'
       : org === 'Primaria'
       ? 'my-h4-primaria'
       : 'my-h4';
 
-  return (
-    <section className="mb-4">
-      <h2 className={titleClass}>
-        {intl.formatMessage(messages.tools)}
-      </h2>
-      <img src={myFavicon} alt="Descripción de la imagen" width="400" />
-    </section>
-  );
+      return (
+        <section className="mb-4">
+          <h2 className={titleClass}>
+            {intl.formatMessage(messages.tools)}
+          </h2>
+          <img src={myFavicon} alt="Descripción de la imagen" width="200" />
+      
+          {/* Texto de la biblioteca */}
+          <div className="library-reminder mt-3">
+            <p style={{ fontSize: '1rem', lineHeight: '1.6', color: '#333' }}>
+              📚 <strong>Recuerda que siempre tienes disponible la Biblioteca.</strong><br />
+              En el menú de la izquierda encontrarás acceso a materiales adicionales, libros, artículos, los libros de texto oficiales y mucho más para complementar tu aprendizaje.
+            </p>
+          </div>
+        </section>
+      );
+      
 };
 
 CourseTools.propTypes = {
